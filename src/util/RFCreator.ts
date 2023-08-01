@@ -190,7 +190,7 @@ export class RFCreator {
             if (position) {
                 node = {
                     ...node,
-                    type: 'dyreqtCompositionElement',
+                    type: node.type || 'dyreqtElement',
                     position: position || null,
                 }
             }
@@ -375,105 +375,7 @@ export class RFCreator {
     static createCompositionEdgeViewModels() {
         const edge_data = this.composition_edges;
         const formattedEdges = this.formatEdges(edge_data);
-        // console.log("FORMATTED EDGES")
-        // console.log(formattedEdges)
         return formattedEdges;
-        // {
-        
-        // return [{
-        //     id: 'connection-1',
-        //     source: '318de7e4-6364-47b6-bb6d-c013062e9e40',
-        //     target: '8ca3685f-6c82-4374-b301-65d02ea2b41c',
-        // }];
     }
 }
 export default RFCreator;
-
-
-//     const nodes = [
-    //     {
-    //         id: 'G1',
-    //         type: 'dyreqtGroup',
-    //         position: { x: 0, y: 0 },
-    //         style: {
-    //             width: 500,
-    //             height: 1000,
-    //         },
-    //         data: {
-    //             label: 'Group 1',
-    //             gridPosition: {
-    //                 row: 1,
-    //                 column: 1,
-    //                 width: 4,
-    //                 height: 4,
-    //             }
-    //         }
-    //     },
-    //     {
-    //         id: 'A',
-    //         type: 'dyreqtElement',
-    //         data: {
-    //             label: 'A',
-    //             gridPosition: {
-    //                 row: 1,
-    //                 column: 1,
-    //             }
-    //         },
-    //         parentNode: 'G1',
-    //         extent: 'parent',
-    //     },
-    //     {
-    //         id: 'B',
-    //         type: 'dyreqtElement',
-    //         data: {
-    //             label: 'B',
-    //             gridPosition: {
-    //                 row: 2,
-    //                 column: 1,
-    //             }
-    //         },
-    //         parentNode: 'G1',
-    //         extent: 'parent',
-    //     },
-    // ]
-        // const nodes = [
-        //     {
-        //         id: 'A',
-        //         type: 'dyreqtGroup',
-        //         data: {
-        //             label: 'Group A',
-        //             gridPosition: {
-        //                 row: 1,
-        //                 column: 1,
-        //                 height: 4,
-        //                 width: 4,
-        //             },
-        //         },
-        //     },
-        //     {
-        //         id: 'B',
-        //         type: 'dyreqtElement',
-        //         data: {
-        //             label: MissionGraphViewModel.Nodes[0].label,
-        //             gridPosition: {
-        //                 row: 1,
-        //                 column: 1,
-        //             }
-        //         },
-        //         parentNode: 'A',
-        //         extent: 'parent',
-        //     },
-        //     {
-        //         id: 'C',
-        //         type: 'dyreqtElement',
-        //         data: {
-        //             label: MissionGraphViewModel.Nodes[1].label,
-        //             gridPosition: {
-        //                 row: 2,
-        //                 column: 1,
-        //             }
-        //         },
-        //         parentNode: 'A',
-        //         extent: 'parent',
-        //     },
-        // ];

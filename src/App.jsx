@@ -1,4 +1,10 @@
-import ReactFlow, { Controls, Background } from 'reactflow';
+import React, { useState } from 'react';
+import ReactFlow, {
+  Controls,
+  Background,
+  useNodesState,
+  useEdgesState,
+} from 'reactflow';
 import 'reactflow/dist/style.css';
 import TextUpdaterNode from './customRFNodes/TextUpdaterNode';
 import DyreqtDefault from './customRFNodes/DyreqtDefault';
@@ -41,10 +47,15 @@ const createComponentView = () => {
     edges
   }
 }
-
+const missionView = createMissionGraphView();
+const componentView = createComponentView();
+  
 function Flow() {
-  // const { nodes, edges } = createMissionGraphView();
-  const { nodes, edges } = createComponentView();
+  const [ viewSelection, setViewSelection ] = useState("MISSION_GRAPH_VIEW");
+  const [ nodes, setNodes, onNodesChange ] = useNodesState(missionView.nodes)
+  const [ edges, setEdges, onEdgesChange ] = useEdgesState(missionView.edges)
+
+
   return (
     <div style={{ height: '100vh', width: '100vw' }}>
       <ReactFlow
@@ -55,6 +66,46 @@ function Flow() {
         <Background />
         <Controls />
       </ReactFlow>
+      <div
+        style={{
+          position: 'absolute',
+          top: '10px',
+          left: '10px',
+        }}
+      >
+      <button
+        style={{
+          // position: 'absolute',
+          top: '10px',
+          left: '60px',
+          width: '12rem',
+          backgroundColor: '#88f'
+        }}
+        label="CYCLE VIEW"
+        onClick={() => {
+          console.log('blah')
+          if (viewSelection === 'MISSION_GRAPH_VIEW')
+          {
+            setViewSelection('COMPOSITION_VIEW');
+            setNodes(componentView.nodes);
+            setEdges(componentView.edges);
+          } else if (viewSelection === 'COMPOSITION_VIEW') {
+            setViewSelection('MISSION_GRAPH_VIEW');
+            setNodes(missionView.nodes);
+            setEdges(missionView.edges);
+          }
+        }}
+      >
+        CYCLE VIEW
+      </button>
+        <span style={{
+          paddingLeft: '2rem',
+          color: '#88f',
+          fontWeight: 'bold',
+        }}>
+          {viewSelection}
+        </span>
+      </div>
     </div>
   );
 }
