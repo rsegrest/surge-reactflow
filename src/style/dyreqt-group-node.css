@@ -1,0 +1,16 @@
+.dyreqt-group-node {
+    border: 1px solid #888;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    background: rgba(255,200,180,0.3);
+}
+  
+.dyreqt-group-node-label {
+    display: block;
+    color: #777;
+    font-size: 0.85rem;
+}

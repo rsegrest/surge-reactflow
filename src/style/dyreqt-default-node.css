@@ -1,0 +1,13 @@
+.dyreqt-default-node {
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 5px;
+    background: #fa0;
+}
+  
+.dyreqt-default-node-label {
+    display: block;
+    color: #000;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
