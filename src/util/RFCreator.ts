@@ -3,22 +3,9 @@ import {
 } from '../test_viewmodels/MissionGraphViewModel.ts';
 import {
     Node,
-    Edge,
+    // Edge,
 } from 'reactflow';
 
-// export interface groupdata {
-//     id:string;
-//     label:string;
-//     nodes:Node[];
-//     data:unknown[]|null;
-//     gridLayout:{
-//         row:number;
-//         column:number;
-//         width?:number;
-//         height?:number;
-//     }
-// }
-// Groups: 
 export interface groupdata {
     id: string;
     label: string;
@@ -32,24 +19,95 @@ export interface groupdata {
         width: number;
         height: number;
     };
-    data: unknown|undefined|null;
+    data?: {
+        gridLayout?: GridLayout;
+    };
+}
+export interface GridPosition {
+    row:number;
+    column:number;
+}
+export interface GridDimensions {
+    width:number;
+    height:number;
+}
+export interface GridLayout {
+    row?: number;
+    column?: number;
+    width?: number;
+    height?: number;
+    gridPosition?: GridPosition;
+    gridDimensions?: GridDimensions;
+}
+export interface initialNodeData {
+    id: string;
+    label: string;
+    gridLayout?:GridLayout;
+    data?:unknown;
 }
 export class RFCreator {
 
-    groups = [
+    static groups = [
         MissionGraphViewModel.Groups[0],
         MissionGraphViewModel.Groups[1],
     ]
-    group_1_nodes = [
+    static group_1_nodes = [
         MissionGraphViewModel.Nodes[0],
         MissionGraphViewModel.Nodes[1],
         MissionGraphViewModel.Nodes[2],
     ]
 
-    edge_data = [
+    static group_2_nodes = [
+        MissionGraphViewModel.Nodes[3],
+        MissionGraphViewModel.Nodes[4],
+        MissionGraphViewModel.Nodes[5],    
+    ]
+
+    static edge_data = [
         [MissionGraphViewModel.Nodes[0], MissionGraphViewModel.Nodes[1]],
         [MissionGraphViewModel.Nodes[1], MissionGraphViewModel.Nodes[2]],
-    ]
+        [MissionGraphViewModel.Nodes[3], MissionGraphViewModel.Nodes[4]],
+        [MissionGraphViewModel.Nodes[4], MissionGraphViewModel.Nodes[5]],
+        [MissionGraphViewModel.Nodes[2], MissionGraphViewModel.Nodes[6]],
+        [MissionGraphViewModel.Nodes[5], MissionGraphViewModel.Nodes[6]],
+        [MissionGraphViewModel.Nodes[6], MissionGraphViewModel.Nodes[7]],
+        [MissionGraphViewModel.Nodes[7], MissionGraphViewModel.Nodes[8]],
+        [MissionGraphViewModel.Nodes[7], MissionGraphViewModel.Nodes[9]],
+        [MissionGraphViewModel.Nodes[9], MissionGraphViewModel.Nodes[10]],
+        [MissionGraphViewModel.Nodes[11], MissionGraphViewModel.Nodes[12]],
+        [MissionGraphViewModel.Nodes[12], MissionGraphViewModel.Nodes[13]],
+        [MissionGraphViewModel.Nodes[13], MissionGraphViewModel.Nodes[14]],
+        [MissionGraphViewModel.Nodes[14], MissionGraphViewModel.Nodes[15]],
+        [MissionGraphViewModel.Nodes[15], MissionGraphViewModel.Nodes[16]],
+        [MissionGraphViewModel.Nodes[17], MissionGraphViewModel.Nodes[18]],
+        [MissionGraphViewModel.Nodes[18], MissionGraphViewModel.Nodes[19]],
+        [MissionGraphViewModel.Nodes[16], MissionGraphViewModel.Nodes[20]],
+        [MissionGraphViewModel.Nodes[19], MissionGraphViewModel.Nodes[20]],
+        [MissionGraphViewModel.Nodes[20], MissionGraphViewModel.Nodes[21]],
+        [MissionGraphViewModel.Nodes[21], MissionGraphViewModel.Nodes[22]],
+
+        [MissionGraphViewModel.Nodes[23], MissionGraphViewModel.Nodes[24]],
+        [MissionGraphViewModel.Nodes[24], MissionGraphViewModel.Nodes[25]],
+        
+        [MissionGraphViewModel.Nodes[22], MissionGraphViewModel.Nodes[26]],
+        [MissionGraphViewModel.Nodes[25], MissionGraphViewModel.Nodes[26]],
+    
+        [MissionGraphViewModel.Nodes[26], MissionGraphViewModel.Nodes[27]],
+        [MissionGraphViewModel.Nodes[27], MissionGraphViewModel.Nodes[28]],
+    
+        [MissionGraphViewModel.Nodes[29], MissionGraphViewModel.Nodes[30]],
+        [MissionGraphViewModel.Nodes[30], MissionGraphViewModel.Nodes[31]],
+    
+        [MissionGraphViewModel.Nodes[28], MissionGraphViewModel.Nodes[32]],
+        [MissionGraphViewModel.Nodes[31], MissionGraphViewModel.Nodes[32]],
+    
+        [MissionGraphViewModel.Nodes[32], MissionGraphViewModel.Nodes[33]],
+        [MissionGraphViewModel.Nodes[33], MissionGraphViewModel.Nodes[34]],
+        [MissionGraphViewModel.Nodes[34], MissionGraphViewModel.Nodes[35]],
+    
+    ];
+    
+    
 
     static translateGridToReactFlowSpace(nodes:Node[]) {
         const updatedNodes = nodes.map(node => {
@@ -64,12 +122,12 @@ export class RFCreator {
                 if (isChild) {
                     position = {
                         x: gridLayout.column * 20,
-                        y: gridLayout.row * 80,
+                        y: gridLayout.row * 75,
                     }
                 } else {
                     position = {
-                        x: gridLayout.column * 200,
-                        y: gridLayout.row * 200,
+                        x: gridLayout.column * 160,
+                        y: gridLayout.row * 120,
                     };
                 }
             }
@@ -104,26 +162,53 @@ export class RFCreator {
         return updatedNodes;
     }
     static createMissionGraphEdgeViewModels() {
-        const edges: Edge[] = [{
-            id: 'eA-B', source: 'A', target: 'B',
-            style: {
-                strokeWidth: 2,
-                stroke: '#FF0072',
-            },
-        }];
+        const edges = this.formatEdges();
+        console.log('EDGES (2):')
+        console.log(edges);
         return edges;
     }
     static getPosition(
-        gridLayout:{column:number, row:number}|null = null
+        gridPosition:GridPosition|null = null
     ) {
-        if (gridLayout) {
+        if (gridPosition) {
             return {
-                x: gridLayout.column * 100,
-                y: gridLayout.row * 80,
+                x: gridPosition.column * 100,
+                y: gridPosition.row * 100,
             }
         }
     }
-    
+    static formatNodes() {
+        const nodes:initialNodeData[] = MissionGraphViewModel.Nodes;
+        const formattedNodes = nodes.map((node) => {
+            let data:{
+                gridLayout?: GridLayout,
+            } = {};
+
+            if (node.data) {
+                data = node.data;
+            }
+            let gridLayout = null;
+            if (data.hasOwnProperty('gridLayout')) {
+                gridLayout = data.gridLayout as GridLayout;
+            }
+
+            let gridPosition = {
+                row: gridLayout?.row,
+                column: gridLayout?.column}
+            return {
+                ...node,
+                type: 'dyreqtElement',
+                position: this.getPosition(gridPosition as GridPosition),
+                style: {},
+                data: {
+                    ...data,
+                    label: node.label,
+                    gridLayout,
+                }
+            }
+        })
+        return formattedNodes;
+    }
     static formatGroups() {
         const groups:groupdata[] = MissionGraphViewModel.Groups;
         const formattedGroups = groups.map(group => {
@@ -150,14 +235,43 @@ export class RFCreator {
         })
         return formattedGroups;
     }
+    static formatEdges() {
+        let edges = this.edge_data.map((e) => {
+            console.log(e)
+            let edge = {
+                source: "",
+                target: "",
+                id: "",
+            };
+
+            if (e[0].id) {
+                edge.source = e[0].id.toString();
+            }
+            if (e[1].id) {
+                edge.target = e[1].id.toString();
+            }
+
+            if (e[0].id && e[1].id) {
+                edge.id = `e${e[0].id}-${e[1].id}`
+            }
+            return edge;
+        })
+        return edges;
+    }
     static createMissionGraphNodeViewModels() {
-        // Get Groups
         const groupNodes = this.formatGroups();
-        const nodes = [...groupNodes]
-        const updatedNodes = this.translateGridToReactFlowSpace(
-            nodes as Node[]
+        const updatedGroupNodes = this.translateGridToReactFlowSpace(
+            groupNodes as Node[]
         );
-        return updatedNodes;
+        const initialNodes = this.formatNodes();
+        const updatedNodes = this.translateGridToReactFlowSpace(
+            initialNodes as Node[]
+        );
+        const nodes = [
+            ...updatedGroupNodes,
+            ...updatedNodes
+        ]
+        return nodes;
     }
 }
 export default RFCreator;

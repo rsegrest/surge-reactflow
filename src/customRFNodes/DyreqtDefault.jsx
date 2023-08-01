@@ -19,13 +19,6 @@ function DyreqtDefault({ data, isConnectable }) {
         <Handle
             type="source"
             position={Position.Bottom}
-            id="a"
-            style={handleStyle}
-            isConnectable={isConnectable}
-        />
-        <Handle
-            type="source"
-            position={Position.Bottom}
             id="b" isConnectable={isConnectable}
         />
     </div>
