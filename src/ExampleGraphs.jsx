@@ -11,7 +11,7 @@ import DyreqtDefault from './customRFNodes/DyreqtDefault';
 import DyreqtGroup from './customRFNodes/DyreqtGroup';
 import DyreqtCompositionElement from './customRFNodes/DyreqtCompositionElement.jsx';
 import RFCreator from './util/RFCreator';
-import CompositionViewModel from '../src/test_viewmodels/CompositionViewModel';
+import CompositionViewModel from './test_viewmodels/CompositionViewModel';
 import './style/text-updater-node.css';
 
 const rfStyle = {
@@ -50,7 +50,7 @@ const createComponentView = () => {
 const missionView = createMissionGraphView();
 const componentView = createComponentView();
   
-function Flow() {
+function ExampleGraphs() {
   const [ viewSelection, setViewSelection ] = useState("MISSION_GRAPH_VIEW");
   const [ nodes, setNodes, onNodesChange ] = useNodesState(missionView.nodes)
   const [ edges, setEdges, onEdgesChange ] = useEdgesState(missionView.edges)
@@ -109,4 +109,4 @@ function Flow() {
   );
 }
 
-export default Flow;
+export default ExampleGraphs;

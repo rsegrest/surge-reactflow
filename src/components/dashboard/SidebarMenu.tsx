@@ -1,6 +1,6 @@
 const Sidebar = () => {
     return (
-        <div>
+        <div className='sidebar-menu-container'>
             <h1>Sidebar</h1>
         </div>
     );

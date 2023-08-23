@@ -1,6 +1,6 @@
 const MainContainer = () => {
     return (
-        <div>
+        <div className='main-container'>
             <h1>
                 MainContainer
             </h1>
