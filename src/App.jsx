@@ -75,7 +75,6 @@ function Flow() {
       >
       <button
         style={{
-          // position: 'absolute',
           top: '10px',
           left: '60px',
           width: '12rem',
