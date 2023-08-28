@@ -1,0 +1,1 @@
+export { IconComposition } from "./IconComposition";

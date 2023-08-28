@@ -1,0 +1,16 @@
+.horizontal-dark-full {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 320px;
+}
+
+.horizontal-dark-full .divider {
+  align-self: stretch;
+  height: 1px;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+}

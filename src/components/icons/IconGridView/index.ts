@@ -1,0 +1,1 @@
+export { IconGridView } from "./IconGridView";

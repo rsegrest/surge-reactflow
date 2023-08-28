@@ -1,4 +1,4 @@
 const SearchInput = () => {
-    <div><p>SearchInput</p></div>
+    return (<div><p>SearchInput</p></div>);
 }
 export default SearchInput;

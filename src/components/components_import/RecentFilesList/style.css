@@ -1,0 +1,143 @@
+.recent-files-list {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  width: 1131px;
+}
+
+.recent-files-list .filters {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  padding: 0px 0px 15px;
+  position: relative;
+  width: 100%;
+}
+
+.recent-files-list .titles {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 616px;
+}
+
+.recent-files-list .text-wrapper-2 {
+  align-self: stretch;
+  color: var(--daasthemesysdarkon-background);
+  font-family: var(--daas-theme-title-large-font-family);
+  font-size: var(--daas-theme-title-large-font-size);
+  font-style: var(--daas-theme-title-large-font-style);
+  font-weight: var(--daas-theme-title-large-font-weight);
+  letter-spacing: var(--daas-theme-title-large-letter-spacing);
+  line-height: var(--daas-theme-title-large-line-height);
+  margin-top: -1px;
+  position: relative;
+  width: 90px;
+}
+
+.recent-files-list .dark-mode-button-instance {
+  flex: 0 0 auto !important;
+  justify-content: flex-end !important;
+}
+
+.recent-files-list .design-component-instance-node {
+  margin-top: -1px !important;
+}
+
+.recent-files-list .list-toggle {
+  align-items: center;
+  /* display: flex; */
+  flex: 1;
+  flex-grow: 1;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.recent-files-list .dark-mode-button-2 {
+  flex: 0 0 auto !important;
+}
+
+.recent-files-list .subheading {
+  align-items: center;
+  align-self: stretch;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--daasthemesysdarkoutline);
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  padding: 0px 24px 10px 15px;
+  position: relative;
+  width: 100%;
+}
+
+.recent-files-list .text-wrapper-3 {
+  align-self: stretch;
+  color: var(--daasthemesysdarkon-background);
+  font-family: var(--daas-theme-title-small-font-family);
+  font-size: var(--daas-theme-title-small-font-size);
+  font-style: var(--daas-theme-title-small-font-style);
+  font-weight: var(--daas-theme-title-small-font-weight);
+  letter-spacing: var(--daas-theme-title-small-letter-spacing);
+  line-height: var(--daas-theme-title-small-line-height);
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: 90px;
+}
+
+.recent-files-list .text-wrapper-4 {
+  color: var(--daasthemesysdarkon-background);
+  font-family: var(--daas-theme-title-small-font-family);
+  font-size: var(--daas-theme-title-small-font-size);
+  font-style: var(--daas-theme-title-small-font-style);
+  font-weight: var(--daas-theme-title-small-font-weight);
+  letter-spacing: var(--daas-theme-title-small-letter-spacing);
+  line-height: var(--daas-theme-title-small-line-height);
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.recent-files-list .fil {
+  align-items: flex-start;
+  align-self: stretch;
+  border-radius: 20px;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 15px;
+  padding: 5px 0px;
+  position: relative;
+  width: 100%;
+}
+
+.recent-files-list .fil-2 {
+  align-items: flex-start;
+  border-radius: 20px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 5px;
+  height: 172px;
+  padding: 5px 15px 5px 0px;
+  position: relative;
+}
+
+.recent-files-list .dark-mode-menu-list-instance {
+  align-self: stretch !important;
+  width: 100% !important;
+}
+
+.recent-files-list .icon-instance-node {
+  height: 24px !important;
+  position: relative !important;
+  width: 24px !important;
+}

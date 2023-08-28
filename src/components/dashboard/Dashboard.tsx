@@ -1,19 +1,27 @@
-import Sidebar from './SidebarMenu';
 import MainContainer from './MainContainer';
 import PanelType from '../../types/PanelTypes';
-
-// import '../../styles/dashboard.css';
+import DashboardSidePanel from './leftPanelDashboard'
+import Dashbody from './dashbody';
+import TopNavScreen from './navTabDashboard';
+import { Col, Row, } from "react-bootstrap"
+import "../../style/dashboard.css";
 
 interface DashboardProps {
     panels: PanelType[];
 }
 
-const Dashboard = (props:DashboardProps) => {
+const Dashboard = (props: DashboardProps) => {
     return (
         <div className='dashboard-container'>
-            <h1>Dashboard</h1>
-            <Sidebar />
-            <MainContainer />
+            <TopNavScreen />
+            <Row>
+            <Col xs="3" className='removeGap'>
+                <DashboardSidePanel />
+            </Col>
+            <Col xs="9" className='removeGap'>
+                <Dashbody />
+            </Col>
+            </Row>
         </div>
     );
 }

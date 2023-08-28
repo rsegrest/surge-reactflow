@@ -1,0 +1,17 @@
+.horizontal-inset {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 0px 0px 16px;
+  position: relative;
+  width: 320px;
+}
+
+.horizontal-inset .divider {
+  align-self: stretch;
+  height: 1px;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+}

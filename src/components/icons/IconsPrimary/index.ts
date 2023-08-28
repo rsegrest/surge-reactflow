@@ -1,0 +1,1 @@
+export { IconsPrimary } from "./IconsPrimary";
