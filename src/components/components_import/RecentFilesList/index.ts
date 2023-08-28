@@ -1,1 +1,0 @@
-export { RecentFilesList } from "./RecentFilesList";

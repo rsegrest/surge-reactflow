@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    src: local('trebuc'), url('../fonts/trebuc.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-style: bold;
+    src: local('trebucbd'), url('../fonts/trebucbd.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Trebuchet Bold Italic MS', Arial, sans-serif;
+    font-style: italic bold;
+    src: local('trebucbi'), url('../fonts/trebucbi.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Trebuchet Italic MS', Arial, sans-serif;
+    font-style: italic;
+    src: local('trebucit'), url('../fonts/trebucbi.ttf') format('truetype');
+}
+
+.trebuchet-font {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-style: normal;
+}
+.trebuchet-font-bold {
+    font-family: 'Trebuchet Bold MS', Arial, sans-serif;
+}
+.trebuchet-font-italic {
+    font-family: 'Trebuchet Italic MS', Arial, sans-serif;
+}
+.trebuchet-font-bold-italic {
+    font-family: 'Trebuchet Bold Italic MS', Arial, sans-serif;
+}

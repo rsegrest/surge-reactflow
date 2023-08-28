@@ -1,1 +1,0 @@
-export { IconResource } from "./IconResource";

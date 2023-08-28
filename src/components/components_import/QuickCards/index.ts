@@ -1,1 +1,0 @@
-export { QuickCards } from "./QuickCards";

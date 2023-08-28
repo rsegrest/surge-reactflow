@@ -1,1 +1,0 @@
-export { IconHomeFill } from "./IconHomeFill";
