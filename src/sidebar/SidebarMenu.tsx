@@ -1,7 +1,8 @@
-import SearchPanel from "../subpanels/search/SearchPanel";
-import ResourceLibraryPanel from "../subpanels/resourcelibrary/ResourceLibraryPanel";
-import SettingsButton from "../button/SettingsButton";
-export const SidebarMenu = () => {
+import { v4 as uuidv4 } from 'uuid';
+export const SidebarMenu = (props:{
+    setViewType:Function,
+    panels:JSX.Element[],
+}) => {
     return (
         <div
             style={{
@@ -11,9 +12,13 @@ export const SidebarMenu = () => {
                 backgroundColor: 'rgba(255,255,255,0.1)',
             }}
         >
-            <SearchPanel />
-            <ResourceLibraryPanel />
-            <SettingsButton />
+            {props.panels.map((panel: JSX.Element) => (
+                <div
+                    key={uuidv4()}
+                >
+                    {panel}
+                </div>
+            ))}
         </div>
     );
 }

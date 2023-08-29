@@ -1,8 +1,8 @@
-import { v4 as uuidv4 } from 'uuid';
 import Container from 'react-bootstrap/Container';
+import OutputPanel from './output/OutputPanel';
 
-const MainContent = (props:{
-    content:JSX.Element[],
+const OutputView = (props:{
+    // setViewType: Function,
 }) => {
     return (
         <Container
@@ -14,14 +14,8 @@ const MainContent = (props:{
                 display: 'inline-block',
             }}
         >
-            {props.content.map((panel: JSX.Element) => (
-                <div
-                    key={uuidv4()}
-                >
-                    {panel}
-                </div>
-            ))}
+            <OutputPanel />
         </Container>
     )
 }
-export default MainContent;
+export default OutputView;

@@ -1,11 +1,15 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import "../style/topbar.css";
-import HeaderLogotype from './HeaderLogoType';
+import HeaderLogotype from './HeaderLogotype';
 import Icon from '../icon/Icon';
 import IconType from '../icon/IconType';
+import { Button } from 'react-bootstrap';
+import ViewType from '../types/ViewType';
 
-const TopBar = () => {
+const TopBar = (props:{
+  setViewType: Function,
+}) => {
   return (
     <Navbar
         className="topbar"
@@ -27,13 +31,18 @@ const TopBar = () => {
         }}
       >
         <HeaderLogotype />
-        <span
+        <Button
           style={{
             paddingBottom: '0.5rem',
+            backgroundColor: 'transparent',
+            borderColor: 'rgb(24,24,24)'
+          }}
+          onClick={() => {
+            props.setViewType(ViewType.HOME)
           }}
         >
           <Icon iconType={IconType.HOME} size={20} />
-        </span>
+        </Button>
       </Container>
     </Navbar>
   );

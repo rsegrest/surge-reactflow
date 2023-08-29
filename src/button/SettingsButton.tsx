@@ -1,7 +1,10 @@
 import Button from 'react-bootstrap/Button';
+import ViewType from '../types/ViewType';
 import "../style/font.css";
 
-const SettingsButton = () => {
+const SettingsButton = (props:{
+    setViewType: Function,
+}) => {
     return (
         <Button
             style={{
@@ -12,7 +15,11 @@ const SettingsButton = () => {
                 paddingLeft: '1.2rem',
                 paddingRight: '1.2rem',
                 margin: '1rem',
-            }}>
+            }}
+            onClick={() => {
+                props.setViewType(ViewType.SETTINGS);
+            }}    
+        >
                 <span>
                     {'⚙'}
                 </span>
