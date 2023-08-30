@@ -1,10 +1,17 @@
-import BaseButton from "../../button/BaseButton";
-import IconType from "../../icon/IconType";
 import RecentLink from "./RecentLink";
 import RecentList from "./RecentList";
 import RecentListDisplayTypeButton from "../../button/RecentListDisplayTypeButton";
+import ViewType from "../../../types/ViewType";
 
-const RecentTopBar = (props:{recentLinks:string[]}) => {
+
+const RecentTopBar = (props:{
+    recentLinks:{
+        label: string,
+        link: ViewType
+    }[],
+    setViewType:Function
+}) => {
+    console.log(props.setViewType)
     let recentLinks = props.recentLinks || ["Composition Graph", "Mission Graph", "Mapping", "Dyreqt Run"]
     return (
         <div>
@@ -24,10 +31,12 @@ const RecentTopBar = (props:{recentLinks:string[]}) => {
                     >Recent:</h3>
                 </span>
                 {
-                    recentLinks.map((link) => (
+                    recentLinks.map((l) => (
                         <RecentLink
-                            key={link}
-                            linkName={link}
+                            key={l.label}
+                            label={l.label}
+                            linkTarget={l.link}
+                            setViewType={props.setViewType}
                         />
                     ))
                 }

@@ -1,5 +1,13 @@
 import Button from 'react-bootstrap/Button';
-const RecentLink = ({ linkName }: { linkName: string }) => {
+import ViewType from '../../../types/ViewType';
+
+interface RecentLinkProps {
+    label: string,
+    linkTarget:ViewType|string,
+    setViewType:Function,
+}
+
+const RecentLink = (props: RecentLinkProps) => {
     return (
         <Button
             className='recent-link-btn'
@@ -12,6 +20,9 @@ const RecentLink = ({ linkName }: { linkName: string }) => {
                 height: '1rem',
                 border: '1px solid rgb(24,24,24)'
             }}
+            onClick={() => {
+                props.setViewType(props.linkTarget);
+            }}
         >
             <h5
                 style={{
@@ -19,7 +30,7 @@ const RecentLink = ({ linkName }: { linkName: string }) => {
                     display: 'inline-block',
                 }}
             >
-                {linkName}
+                {props.label}
             </h5>
         </Button>
     )

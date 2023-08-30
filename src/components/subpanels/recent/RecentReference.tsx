@@ -1,5 +1,5 @@
-import Icon from "../../icon/Icon";
-import IconType from "../../icon/IconType";
+import Icon from "../../../assets/icon/Icon";
+import IconType from "../../../assets/icon/IconType";
 
 const RecentReference = ({
     filename,

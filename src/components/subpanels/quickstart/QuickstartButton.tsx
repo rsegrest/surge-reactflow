@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
-import Icon from "../../icon/Icon";
-import { IconType } from '../../icon/IconType';
+import Icon from '../../../assets/icon/Icon';
+import IconType from '../../../assets/icon/IconType';
 import '../../style/font.css';
 
 interface QuickStartButtonProps {

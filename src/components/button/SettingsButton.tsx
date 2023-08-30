@@ -1,5 +1,5 @@
 import Button from 'react-bootstrap/Button';
-import ViewType from '../types/ViewType';
+import ViewType from '../../types/ViewType';
 import "../style/font.css";
 
 const SettingsButton = (props:{

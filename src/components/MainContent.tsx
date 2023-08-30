@@ -1,9 +1,12 @@
-import { v4 as uuidv4 } from 'uuid';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
+import { v4 as uuidv4 } from 'uuid';
 
 const MainContent = (props:{
     content:JSX.Element[],
+    setViewType:Function,
 }) => {
+    console.log(props.setViewType)
     return (
         <Container
             className="main-content"
@@ -14,13 +17,14 @@ const MainContent = (props:{
                 display: 'inline-block',
             }}
         >
-            {props.content.map((panel: JSX.Element) => (
-                <div
-                    key={uuidv4()}
-                >
-                    {panel}
-                </div>
-            ))}
+            {props.content.map((panel: JSX.Element) => {
+                return (
+                    <React.Fragment
+                        key={uuidv4()}
+                    >
+                        {panel}
+                    </React.Fragment>
+                )})}
         </Container>
     )
 }

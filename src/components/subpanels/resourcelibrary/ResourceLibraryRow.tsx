@@ -1,5 +1,5 @@
 import Button from 'react-bootstrap/Button';
-import Icon from '../../icon/Icon';
+import Icon from '../../../assets/icon/Icon';
 import "../../style/font.css";
 
 export const ResourceLibraryRow = (props:{libraryName:string}) => {

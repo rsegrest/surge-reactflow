@@ -1,7 +1,8 @@
 import Button from 'react-bootstrap/Button';
-import { IconType } from '../icon/IconType';
-import Icon from '../icon/Icon';
+import IconType from '../../assets/icon/IconType';
+import Icon from '../../assets/icon/Icon';
 import "../style/font.css";
+import "./button.css";
 
 interface BaseButtonProps {
     backgroundColor?: string;
@@ -46,17 +47,12 @@ const BaseButton = (props:BaseButtonProps) => {
     }
     return (
         <Button
-            className='trebuchet-font'
+            className='trebuchet-font base-button'
             style={{
-                fontFamily: 'Trebuchet MS',
-                fontStyle: 'bold',
                 backgroundColor: backgroundColor,
                 color: textColor,
                 border,
-                borderRadius: '1.5rem',
                 paddingLeft:  paddingLeft,
-                paddingRight: '1.2rem',
-                margin: '1rem',
             }}>
                 {theIcon ? theIcon : ' '}
             <span

@@ -1,4 +1,4 @@
-import IconType from '../../icon/IconType';
+import IconType from '../../../assets/icon/IconType';
 import RecentReference from './RecentReference';
 const RecentList = () => {
     return (

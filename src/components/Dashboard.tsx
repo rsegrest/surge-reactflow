@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import TopBar from "./topbar/TopBar";
 import SidebarMenu from "./sidebar/SidebarMenu";
 import MainContent from "./MainContent";
@@ -31,7 +32,10 @@ const Dashboard = (
                         />
                     ]}
                 />
-                <MainContent content={props.content} />
+                <MainContent
+                    content={props.content}
+                    setViewType={props.setViewType}
+                />
             </div>
         </div>
     );

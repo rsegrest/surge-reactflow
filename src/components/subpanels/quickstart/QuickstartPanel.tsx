@@ -1,5 +1,5 @@
 
-import IconType from "../../icon/IconType";
+import IconType from "../../../assets/icon/IconType";
 import QuickStartButton from "./QuickstartButton";
 import QuickStartHeader from "./QuickstartHeader";
 

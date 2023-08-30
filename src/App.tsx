@@ -1,11 +1,12 @@
 import React from 'react';
-import Dashboard from './Dashboard';
+import Dashboard from './components/Dashboard';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import OutputView from './OutputView';
-import QuickStartPanel from './subpanels/quickstart/QuickstartPanel';
-import RecentPanel from './subpanels/recent/RecentPanel';
-import SettingsPanel from './subpanels/settings/SettingsPanel';
+import OutputView from './components/OutputView';
+import QuickStartPanel from './components/subpanels/quickstart/QuickstartPanel';
+import RecentPanel from './components/subpanels/recent/RecentPanel';
+import SettingsPanel from './components/subpanels/settings/SettingsPanel';
 import ViewType from './types/ViewType';
+import DyreqtView from './components/DyreqtView';
 
 const getLayout = (view:ViewType|string, setViewType:Function) => {
     let layout = null;
@@ -15,7 +16,7 @@ const getLayout = (view:ViewType|string, setViewType:Function) => {
                 setViewType={setViewType}
                 content={[
                     <QuickStartPanel />,
-                    <RecentPanel />
+                    <RecentPanel setViewType={setViewType} />
             ]} />
         );
     } else if (view === ViewType.SETTINGS) {
@@ -33,6 +34,15 @@ const getLayout = (view:ViewType|string, setViewType:Function) => {
                 setViewType={setViewType}
                 content={[
                     <OutputView />
+                ]}
+            />
+        )
+    } else if (view === ViewType.DYREQT_RUN) {
+        layout = (
+            <Dashboard
+                setViewType={setViewType}
+                content={[
+                    <DyreqtView />
                 ]}
             />
         )

@@ -1,0 +1,13 @@
+button.base-button.btn.btn-primary {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 4rem;
+    padding-right: 0.8rem;
+}
+
+.base-button {
+    margin-top: 0.6rem;
+    margin-left: 0.6rem;
+    font-family: Trebuchet MS;
+    font-style: bold;
+}

@@ -1,7 +1,8 @@
 import ResourceLibraryHeader from './ResourceLibraryHeader';
 import ResourceLibraryList from './ResourceLibraryList';
 import BaseButton from '../../button/BaseButton';
-import IconType from '../../icon/IconType';
+import IconType from '../../../assets/icon/IconType';
+
 export const ResourceLibraryPanel = () => {
     return (
         <div

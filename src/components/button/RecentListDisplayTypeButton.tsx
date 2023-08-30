@@ -1,5 +1,5 @@
 import BaseButton from "./BaseButton"
-import IconType from "../icon/IconType"
+import IconType from "../../assets/icon/IconType"
 
 interface RecentListDisplayTypeButtonProps {
     isActive:boolean,
