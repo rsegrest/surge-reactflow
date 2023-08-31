@@ -6,6 +6,7 @@ enum ViewType {
     COMPOSITION = 'COMPOSITION',
     MISSION = 'MISSION',
     MAPPING = 'MAPPING',
+    RESOURCE_NETWORK = 'RESOURCE_NETWORK',
     DYREQT_RUN = 'DYREQT_RUN',
 }
 export default ViewType;

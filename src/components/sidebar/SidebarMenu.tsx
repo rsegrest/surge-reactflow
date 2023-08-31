@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 export const SidebarMenu = (props:{
-    setViewType:Function,
+    // setCurrentView:Function,
     panels:JSX.Element[],
 }) => {
     return (

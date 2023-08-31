@@ -10,7 +10,6 @@ import snakeIconImage from './snake_icon.png';
 import upIconImage from './up_icon.png';
 import IconType from './IconType';
 
-
 export const Icon = ({size, iconType}:{
     size:number,
     iconType:IconType|string|null,

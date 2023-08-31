@@ -1,61 +1,102 @@
 import React from 'react';
 import Dashboard from './components/Dashboard';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import OutputView from './components/OutputView';
+import OutputView from './views/OutputView';
 import QuickStartPanel from './components/subpanels/quickstart/QuickstartPanel';
 import RecentPanel from './components/subpanels/recent/RecentPanel';
 import SettingsPanel from './components/subpanels/settings/SettingsPanel';
 import ViewType from './types/ViewType';
-import DyreqtView from './components/DyreqtView';
+import DyreqtView from './views/DyreqtView';
+import CompositionGraphView from './views/CompositionGraphView';
+import MissionEventGraphView from './views/MissionEventGraphView';
+import ResourceNetworkView from './views/ResourceNetworkView';
+import MappingView from './views/MappingView';
 
-const getLayout = (view:ViewType|string, setViewType:Function) => {
+const getLayout = (currentView:ViewType|string, setCurrentView:Function) => {
     let layout = null;
-    if (view === ViewType.HOME) {
+    if (currentView === ViewType.HOME) {
         layout = (
             <Dashboard
-                setViewType={setViewType}
+                setCurrentView={setCurrentView}
                 content={[
                     <QuickStartPanel />,
-                    <RecentPanel setViewType={setViewType} />
+                    <RecentPanel setCurrentView={setCurrentView} />
             ]} />
         );
-    } else if (view === ViewType.SETTINGS) {
+    } else if (currentView === ViewType.SETTINGS) {
         layout = (
             <Dashboard
-                setViewType={setViewType}
+                setCurrentView={setCurrentView}
                 content={[
                     <SettingsPanel />
                 ]}
             />
         )
-    } else if (view === ViewType.OUTPUT) {
+    } else if (currentView === ViewType.OUTPUT) {
         layout = (
             <Dashboard
-                setViewType={setViewType}
+            setCurrentView={setCurrentView}
                 content={[
                     <OutputView />
                 ]}
             />
         )
-    } else if (view === ViewType.DYREQT_RUN) {
+    } else if (currentView === ViewType.DYREQT_RUN) {
         layout = (
             <Dashboard
-                setViewType={setViewType}
+                setCurrentView={setCurrentView}
                 content={[
                     <DyreqtView />
                 ]}
             />
         )
+    } else if (currentView === ViewType.COMPOSITION) {
+        layout = (
+            <Dashboard
+                setCurrentView={setCurrentView}
+                content={[
+                    <CompositionGraphView />
+                ]}
+            />
+        )
+    } else if (currentView === ViewType.MISSION) {
+        layout = (
+            <Dashboard
+                setCurrentView={setCurrentView}
+                content={[
+                    <MissionEventGraphView />
+                ]}
+            />
+        )
+    } else if (currentView === ViewType.RESOURCE_NETWORK) {
+        layout = (
+            <Dashboard
+                setCurrentView={setCurrentView}
+                content={[
+                    <ResourceNetworkView />
+                ]}
+            />
+        )
+    } else if (currentView === ViewType.MAPPING) {
+        layout = (
+            <Dashboard
+                setCurrentView={setCurrentView}
+                content={[
+                    <MappingView />
+                ]}
+            />
+        )
     }
+
     return layout;
 }
 
 const App = () => {
-    const [view, setViewType] = React.useState(ViewType.HOME);
-    console.log(view)
+    const [currentView, setCurrentView] = React.useState(ViewType.HOME);
+    console.log(currentView)
     return (
         <div>
-            {getLayout(view, setViewType)}
+            {getLayout(currentView, setCurrentView)}
         </div>
     );
 }

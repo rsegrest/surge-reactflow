@@ -2,10 +2,10 @@ import RecentTopBar from "./RecentTopBar";
 import ViewType from "../../../types/ViewType";
 
 interface RecentPanelProps {
-    setViewType:Function,
+    setCurrentView:Function,
 }
 const RecentPanel = (props:RecentPanelProps) => {
-    console.log(props.setViewType)
+    // console.log(props.setCurrentView)
     return (
         <>
             <RecentTopBar
@@ -27,7 +27,7 @@ const RecentPanel = (props:RecentPanelProps) => {
                         link: ViewType.DYREQT_RUN,
                     },
                 ]}
-                setViewType={props.setViewType}
+                setViewType={props.setCurrentView}
             />
         </>
     )

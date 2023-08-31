@@ -4,9 +4,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 const MainContent = (props:{
     content:JSX.Element[],
-    setViewType:Function,
+    setCurrentView:Function,
 }) => {
-    console.log(props.setViewType)
+    // console.log(props.setCurrentView)
     return (
         <Container
             className="main-content"

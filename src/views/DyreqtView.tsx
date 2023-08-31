@@ -1,21 +1,20 @@
 import Container from 'react-bootstrap/Container';
-import OutputPanel from './output/OutputPanel';
+import DyreqtPanel from '../components/subpanels/dyreqt/DyreqtPanel';
 
-const OutputView = (props:{
-    // setViewType: Function,
-}) => {
+const DyreqtView = () => {
     return (
         <Container
-            className="main-content"
+            className="dyreqt-view"
             style={{
                 position: 'absolute',
                 width: "100vw",
                 height: '100%',
                 display: 'inline-block',
+                color: 'gray',
             }}
         >
-            <OutputPanel />
+            <DyreqtPanel />
         </Container>
     )
 }
-export default OutputView;
+export default DyreqtView;

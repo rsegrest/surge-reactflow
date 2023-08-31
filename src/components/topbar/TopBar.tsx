@@ -1,3 +1,4 @@
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import "../style/topbar.css";
@@ -6,11 +7,11 @@ import Icon from '../../assets/icon/Icon';
 import IconType from '../../assets/icon/IconType';
 import { Button } from 'react-bootstrap';
 import ViewType from '../../types/ViewType';
-import Tab from '../tabs/Tab';
+// import Tab from '../tabs/Tab';
 
 const TopBar = (props:{
-  setViewType: Function,
-  tabs: string[], // JSX.Element[],
+  setCurrentView: Function,
+  tabs: JSX.Element[], // JSX.Element[],
 }) => {
   return (
     <Navbar
@@ -40,7 +41,7 @@ const TopBar = (props:{
             borderColor: 'rgb(24,24,24)'
           }}
           onClick={() => {
-            props.setViewType(ViewType.HOME)
+            props.setCurrentView(ViewType.HOME)
           }}
         >
           <Icon iconType={IconType.HOME} size={20} />
@@ -51,11 +52,16 @@ const TopBar = (props:{
           float: 'left',
         }}
       >
-        <Tab label={'Composition graph'} tabLink={'null'}></Tab>
-        <Tab label={'Mission Event graph'} tabLink={'null'}></Tab>
-        <Tab label={'Resource Network'} tabLink={'null'}></Tab>
-        <Tab label={'Mapping'} tabLink={'null'}></Tab>
-        <Tab label={'Dyreqt'} tabLink={'null'}></Tab>
+        {props.tabs.map((tab:JSX.Element) => (
+          (
+            <React.Fragment
+              key={tab.props.title}
+            >
+              {tab}
+            </React.Fragment>
+          )
+        ))}
+        
       </Container>
     </Navbar>
   );

@@ -3,7 +3,7 @@ import ViewType from '../../types/ViewType';
 import "../style/font.css";
 
 const SettingsButton = (props:{
-    setViewType: Function,
+    setCurrentView: Function,
 }) => {
     return (
         <Button
@@ -17,7 +17,7 @@ const SettingsButton = (props:{
                 margin: '1rem',
             }}
             onClick={() => {
-                props.setViewType(ViewType.SETTINGS);
+                props.setCurrentView(ViewType.SETTINGS);
             }}    
         >
                 <span>
