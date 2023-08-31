@@ -12,21 +12,26 @@ import MissionEventGraphView from './views/MissionEventGraphView';
 import ResourceNetworkView from './views/ResourceNetworkView';
 import MappingView from './views/MappingView';
 
-const getLayout = (currentView:ViewType|string, setCurrentView:Function) => {
+const getLayout = (
+    currentView:ViewType|string,
+    setCurrentView?:Function|undefined,
+) => {
     let layout = null;
     if (currentView === ViewType.HOME) {
         layout = (
             <Dashboard
-                setCurrentView={setCurrentView}
+                // setCurrentView={setCurrentView}
                 content={[
                     <QuickStartPanel />,
-                    <RecentPanel setCurrentView={setCurrentView} />
+                    <RecentPanel
+                        // setCurrentView={setCurrentView}
+                    />
             ]} />
         );
     } else if (currentView === ViewType.SETTINGS) {
         layout = (
             <Dashboard
-                setCurrentView={setCurrentView}
+                // setCurrentView={setCurrentView}
                 content={[
                     <SettingsPanel />
                 ]}
@@ -35,7 +40,7 @@ const getLayout = (currentView:ViewType|string, setCurrentView:Function) => {
     } else if (currentView === ViewType.OUTPUT) {
         layout = (
             <Dashboard
-            setCurrentView={setCurrentView}
+            // setCurrentView={setCurrentView}
                 content={[
                     <OutputView />
                 ]}
@@ -44,7 +49,7 @@ const getLayout = (currentView:ViewType|string, setCurrentView:Function) => {
     } else if (currentView === ViewType.DYREQT_RUN) {
         layout = (
             <Dashboard
-                setCurrentView={setCurrentView}
+                // setCurrentView={setCurrentView}
                 content={[
                     <DyreqtView />
                 ]}
@@ -53,7 +58,7 @@ const getLayout = (currentView:ViewType|string, setCurrentView:Function) => {
     } else if (currentView === ViewType.COMPOSITION) {
         layout = (
             <Dashboard
-                setCurrentView={setCurrentView}
+                // setCurrentView={setCurrentView}
                 content={[
                     <CompositionGraphView />
                 ]}
@@ -62,7 +67,7 @@ const getLayout = (currentView:ViewType|string, setCurrentView:Function) => {
     } else if (currentView === ViewType.MISSION) {
         layout = (
             <Dashboard
-                setCurrentView={setCurrentView}
+                // setCurrentView={setCurrentView}
                 content={[
                     <MissionEventGraphView />
                 ]}
@@ -71,7 +76,7 @@ const getLayout = (currentView:ViewType|string, setCurrentView:Function) => {
     } else if (currentView === ViewType.RESOURCE_NETWORK) {
         layout = (
             <Dashboard
-                setCurrentView={setCurrentView}
+                // setCurrentView={setCurrentView}
                 content={[
                     <ResourceNetworkView />
                 ]}
@@ -80,7 +85,7 @@ const getLayout = (currentView:ViewType|string, setCurrentView:Function) => {
     } else if (currentView === ViewType.MAPPING) {
         layout = (
             <Dashboard
-                setCurrentView={setCurrentView}
+                // setCurrentView={setCurrentView}
                 content={[
                     <MappingView />
                 ]}

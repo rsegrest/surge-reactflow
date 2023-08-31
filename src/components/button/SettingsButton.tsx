@@ -1,12 +1,13 @@
 import Button from 'react-bootstrap/Button';
-import ViewType from '../../types/ViewType';
+import { NavLink } from 'react-router-dom';
 import "../style/font.css";
 
 const SettingsButton = (props:{
-    setCurrentView: Function,
+    setCurrentView?: Function|undefined,
 }) => {
     return (
-        <Button
+        <NavLink
+            to="/settings"
             style={{
                 backgroundColor: 'black',
                 color: 'white',
@@ -16,9 +17,6 @@ const SettingsButton = (props:{
                 paddingRight: '1.2rem',
                 margin: '1rem',
             }}
-            onClick={() => {
-                props.setCurrentView(ViewType.SETTINGS);
-            }}    
         >
                 <span>
                     {'⚙'}
@@ -33,7 +31,7 @@ const SettingsButton = (props:{
                 >
                     {'Settings'}
                 </span>
-            </Button>
+            </NavLink>
     )
 }
 export default SettingsButton;

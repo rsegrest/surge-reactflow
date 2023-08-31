@@ -6,12 +6,12 @@ import SearchPanel from "./subpanels/search/SearchPanel";
 import ResourceLibraryPanel from "./subpanels/resourcelibrary/ResourceLibraryPanel";
 import SettingsButton from "./button/SettingsButton";
 import Tab from './tabs/Tab';
-// import Tab from 'react-bootstrap/Tab';
 import ViewType from '../types/ViewType';
+// import Tab from 'react-bootstrap/Tab';
 
 const Dashboard = (
     props: {
-        setCurrentView:Function,
+        setCurrentView?:Function|undefined,
         content: JSX.Element[],
     }
 ) => {
@@ -20,27 +20,36 @@ const Dashboard = (
             style={{
                 padding: '0px',
                 backgroundColor: 'black',
+                border: '1px solid orange',
             }}
         >
-            <TopBar
-                setCurrentView={props.setCurrentView}
-                tabs={[
-                    <Tab setCurrentView={props.setCurrentView} tabLink={ViewType.COMPOSITION} title={'Composition graph'} key={uuidv4()}></Tab>,
-                    <Tab setCurrentView={props.setCurrentView} tabLink={ViewType.MISSION} title={'Mission Event graph'} key={uuidv4()}></Tab>,
-                    <Tab setCurrentView={props.setCurrentView} tabLink={ViewType.RESOURCE_NETWORK} title={'Resource Network'} key={uuidv4()}></Tab>,
-                    <Tab setCurrentView={props.setCurrentView} tabLink={ViewType.MAPPING} title={'Mapping'} key={uuidv4()}></Tab>,
-                    <Tab setCurrentView={props.setCurrentView} tabLink={ViewType.DYREQT_RUN} title={'Dyreqt'} key={uuidv4()}></Tab>,
-                ]}
-            />
-            <div>
+            <div
+                className="topbar-container"
+                style={{
+                    border: '2px solid pink',
+                }}
+            >
+
+                <TopBar
+                    tabs={[
+                        <Tab tabLink={ViewType.COMPOSITION} title={'Composition graph'} key={uuidv4()}></Tab>,
+                        <Tab tabLink={ViewType.MISSION} title={'Mission Event graph'} key={uuidv4()}></Tab>,
+                        <Tab tabLink={ViewType.RESOURCE_NETWORK} title={'Resource Network'} key={uuidv4()}></Tab>,
+                        <Tab tabLink={ViewType.MAPPING} title={'Mapping'} key={uuidv4()}></Tab>,
+                        <Tab tabLink={ViewType.DYREQT_RUN} title={'Dyreqt'} key={uuidv4()}></Tab>,
+                    ]}
+                />
+            </div>
+            <div
+                style={{
+                    border: '1px solid red'
+                }}
+            >
                 <SidebarMenu
-                    // setCurrentView={props.setCurrentView}
                     panels={[
                         <SearchPanel />,
                         <ResourceLibraryPanel />,
-                        <SettingsButton
-                            setCurrentView={props.setCurrentView}
-                        />
+                        <SettingsButton />,
                     ]}
                 />
                 <MainContent

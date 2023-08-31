@@ -9,7 +9,7 @@ const RecentTopBar = (props:{
         label: string,
         link: ViewType
     }[],
-    setViewType:Function
+    setViewType?:Function|undefined,
 }) => {
     console.log(props.setViewType)
     let recentLinks = props.recentLinks || ["Composition Graph", "Mission Graph", "Mapping", "Dyreqt Run"]
@@ -36,7 +36,7 @@ const RecentTopBar = (props:{
                             key={l.label}
                             label={l.label}
                             linkTarget={l.link}
-                            setViewType={props.setViewType}
+                            // setViewType={props.setViewType}
                         />
                     ))
                 }

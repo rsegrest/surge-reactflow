@@ -1,17 +1,18 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import { NavLink } from 'react-router-dom';
 import "../style/topbar.css";
 import HeaderLogotype from './HeaderLogotype';
 import Icon from '../../assets/icon/Icon';
 import IconType from '../../assets/icon/IconType';
 import { Button } from 'react-bootstrap';
-import ViewType from '../../types/ViewType';
+// import ViewType from '../../types/ViewType';
 // import Tab from '../tabs/Tab';
 
 const TopBar = (props:{
-  setCurrentView: Function,
   tabs: JSX.Element[], // JSX.Element[],
+  setCurrentView?: Function|undefined,
 }) => {
   return (
     <Navbar
@@ -34,18 +35,16 @@ const TopBar = (props:{
         }}
       >
         <HeaderLogotype />
-        <Button
+        <NavLink
+          to="/home"
           style={{
             paddingBottom: '0.5rem',
             backgroundColor: 'transparent',
             borderColor: 'rgb(24,24,24)'
           }}
-          onClick={() => {
-            props.setCurrentView(ViewType.HOME)
-          }}
         >
           <Icon iconType={IconType.HOME} size={20} />
-        </Button>
+        </NavLink>
       </Container>
       <Container
         style={{
