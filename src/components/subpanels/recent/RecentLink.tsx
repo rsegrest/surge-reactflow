@@ -4,7 +4,7 @@ import ViewType from '../../../types/ViewType';
 interface RecentLinkProps {
     label: string,
     linkTarget:ViewType|string,
-    setViewType:Function,
+    setViewType?:Function|undefined,
 }
 
 const RecentLink = (props: RecentLinkProps) => {
@@ -21,7 +21,7 @@ const RecentLink = (props: RecentLinkProps) => {
                 border: '1px solid rgb(24,24,24)'
             }}
             onClick={() => {
-                props.setViewType(props.linkTarget);
+                // props.setViewType(props.linkTarget);
             }}
         >
             <h5

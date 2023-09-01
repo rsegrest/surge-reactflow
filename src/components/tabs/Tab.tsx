@@ -1,13 +1,14 @@
 import { v4 as uuidv4 } from 'uuid';
-import Button from 'react-bootstrap/Button';
+import { NavLink } from 'react-router-dom';
 interface TabProps {
     title:string,
     tabLink:string,
-    setCurrentView:Function,
+    setCurrentView?:Function|undefined,
 }
 const Tab = (props:TabProps) => {
     return (
-        <Button
+        <NavLink
+            to="/home"
             key={uuidv4()}
             style={{
                 float: 'left',
@@ -25,11 +26,11 @@ const Tab = (props:TabProps) => {
             onClick={() => {
                 console.log('TAB LINKS TO:')
                 console.log(props.tabLink);
-                props.setCurrentView(props.tabLink);
+                // props.setCurrentView(props.tabLink);
             }}
         >
             {props.title}
-        </Button>
+        </NavLink>
     )
 }
 export default Tab;
