@@ -18,7 +18,7 @@ function DyreqtCompositionElement({ data, isConnectable }) {
     <div
         style={{
             backgroundColor: bgColor,
-            borderColor: 'green solid 2px',
+            // borderColor: 'green solid 2px',
             borderRadius: '1rem',
             paddingLeft: '1rem',
             paddingRight: '1rem',
