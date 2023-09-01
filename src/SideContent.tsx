@@ -16,7 +16,7 @@ export const SideContent = () => {
                 width: '25%',
                 display: 'inline-block',
                 height: '100rem',
-                backgroundColor: 'rgb(64,64,64)',
+                backgroundColor: 'rgb(32,32,32)',
             }}
         >
             <div
@@ -27,6 +27,7 @@ export const SideContent = () => {
                     height: '3.5rem',
                     borderBottom: '1px solid gray',
                     borderRight: '1px solid gray',
+                    backgroundColor: 'black',
                 }}
             >
                 <div
@@ -48,7 +49,6 @@ export const SideContent = () => {
                         display: 'inline',
                         paddingTop: '0.5rem',
                         float: 'right',
-                        borderRight: '1px solid gray',
                     }}
                 >
                     <NavLink
@@ -58,7 +58,7 @@ export const SideContent = () => {
                             backgroundColor: 'transparent',
                             borderColor: 'rgb(24,24,24)',
                             display: 'inline',
-
+                            
                         }}
                     >
                         <Icon iconType={IconType.HOME} size={20} />

@@ -30,11 +30,12 @@ export const MainContentTabs = () => {
                     className="col main-col"
                     style={{
                         width: '75%',
-                        display: 'inline-block',
-                        verticalAlign: 'top',
                         height: '3.5rem',
-                        fontFamily: 'Trebuchet MS',
                         fontStyle: 'bold',
+                        verticalAlign: 'top',
+                        display: 'inline-block',
+                        backgroundColor: 'black',
+                        fontFamily: 'Trebuchet MS',
                     }}
                 >
                     <Tabs
@@ -43,10 +44,10 @@ export const MainContentTabs = () => {
                         id="noanim-tab-example"
                         className="mb-3"
                         style={{
-                            height: '100%',
                             color: 'white',
+                            height: '100%',
+                            backgroundColor: 'black',
                             border: '1px solid black',
-                            backgroundColor: 'gray',
                         }}
                     >
                         {tabs.map((tab:ViewType) => (

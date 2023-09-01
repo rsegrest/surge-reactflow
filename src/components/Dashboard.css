@@ -1,9 +1,9 @@
 ul > li.nav-item {
-    border-top: 1px solid rgb(128,128,128);
-    border-left: 1px solid rgb(128,128,128);
-    border-right: 1px solid rgb(128,128,128);
+    border-top: 1px solid rgb(64,64,64);
+    border-left: 1px solid rgb(64,64,64);
+    border-right: 1px solid rgb(64,64,64);
     background: rgb(24,24,24);
-    border-radius: 10px 10px 0px 0px;
+    /* border-radius: 10px 10px 0px 0px; */
     width: 20%;
 }
 
@@ -17,6 +17,13 @@ li.nav-item > button {
     height: 3rem;
     font-size: 1.2rem;
     border-bottom: none;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.hover {
+    background-color: gray;
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+    height: 3rem;
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {

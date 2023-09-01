@@ -11,10 +11,8 @@ const SettingsButton = (props:{
                 height: '10rem',
                 paddingLeft: '1.5rem',
                 paddingTop: '1.5rem',
-                // backgroundColor: 'rgb(24,24,24)',
-                // border: '1px solid white',
             }}
-            >
+        >
             <Link
                 className='btn'
                 to="/settings"
@@ -26,7 +24,6 @@ const SettingsButton = (props:{
                     borderRadius: '2rem',
                     border: '1px solid gray',
                     backgroundColor: 'rgb(0,0,0)',
-                    // backgroundColor: 'pink',
                 }}
             >
                 <div
@@ -34,8 +31,7 @@ const SettingsButton = (props:{
                         position: 'relative',
                         top: '0px',
                         left: '0px',
-                        width: '6rem'
-
+                        width: '6rem',
                     }}
                 >
                     <span>
