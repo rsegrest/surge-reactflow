@@ -6,7 +6,6 @@ export const SidebarMenu = (props:{
     return (
         <div
             style={{
-                width: '20%',
                 height: '100vh',
                 display: 'inline-block',
                 backgroundColor: 'rgba(255,255,255,0.1)',

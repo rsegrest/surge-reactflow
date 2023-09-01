@@ -5,17 +5,21 @@ const HeaderLogotype = () => {
     return (
         <div
             className="vertical-center"
+            style={{
+                display: 'inline',
+            }}
         >
-            <h3
+            <span
                 className='trebuchet-font-bold'
                 style={{
                     fontFamily: 'Trebuchet MS',
                     fontStyle: 'bold',
                     color: 'white',
+                    fontSize: '2rem',
                 }}
             >
                 {'DaaS GUI'}
-            </h3>
+            </span>
         </div>
     )
 }

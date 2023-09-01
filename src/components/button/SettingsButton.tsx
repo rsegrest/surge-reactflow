@@ -1,37 +1,58 @@
 import Button from 'react-bootstrap/Button';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "../style/font.css";
 
 const SettingsButton = (props:{
     setCurrentView?: Function|undefined,
 }) => {
     return (
-        <NavLink
-            to="/settings"
+        <div
             style={{
+                height: '2rem',
                 backgroundColor: 'black',
-                color: 'white',
-                border: 'none',
-                borderRadius: '1.5rem',
-                paddingLeft: '1.2rem',
-                paddingRight: '1.2rem',
-                margin: '1rem',
+                paddingLeft: '1.5rem',
             }}
-        >
-                <span>
-                    {'⚙'}
-                </span>
-                <span
-                    className='trebuchet-font-bold'
+            >
+            <Link
+                className='btn'
+                to="/settings"
+                style={{
+                    position: 'relative',
+                    top: '0px',
+                    left: '0px',
+                    color: 'white',
+                    border: '1px solid white',
+                    borderRadius: '2rem',
+                    
+                }}
+            >
+                <div
                     style={{
-                        fontFamily: 'Trebuchet MS',
-                        fontStyle: 'bold',
-                        paddingLeft: '1rem',
+                        position: 'relative',
+                        top: '0px',
+                        left: '0px',
+                        width: '6rem'
+
                     }}
                 >
-                    {'Settings'}
-                </span>
-            </NavLink>
+                    <span>
+                        {'⚙'}
+                    </span>
+                    <span
+                        className='trebuchet-font-bold'
+                        style={{
+                            fontFamily: 'Trebuchet MS',
+                            fontStyle: 'bold',
+                            paddingLeft: '1rem',
+                        }}
+                    >
+                        {'Settings'}
+                    </span>
+
+                </div>
+
+            </Link>
+        </div>
     )
 }
 export default SettingsButton;

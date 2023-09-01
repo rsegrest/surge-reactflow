@@ -34,8 +34,8 @@ const TopBar = (props:{
           width: '20%',
         }}
       >
-        <HeaderLogotype />
-        <NavLink
+        {/* <HeaderLogotype /> */}
+        {/* <NavLink
           to="/home"
           style={{
             paddingBottom: '0.5rem',
@@ -44,7 +44,7 @@ const TopBar = (props:{
           }}
         >
           <Icon iconType={IconType.HOME} size={20} />
-        </NavLink>
+        </NavLink> */}
       </Container>
       <Container
         style={{

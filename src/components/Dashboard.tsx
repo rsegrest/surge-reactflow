@@ -1,12 +1,20 @@
-import { v4 as uuidv4 } from 'uuid';
-import TopBar from "./topbar/TopBar";
+import Tabs from 'react-bootstrap/Tabs';
+import Tab from 'react-bootstrap/Tab';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { NavLink } from "react-router-dom";
 import SidebarMenu from "./sidebar/SidebarMenu";
-import MainContent from "./MainContent";
 import SearchPanel from "./subpanels/search/SearchPanel";
 import ResourceLibraryPanel from "./subpanels/resourcelibrary/ResourceLibraryPanel";
 import SettingsButton from "./button/SettingsButton";
-import Tab from './tabs/Tab';
-import ViewType from '../types/ViewType';
+import HeaderLogotype from "./topbar/HeaderLogotype";
+import Icon from "../assets/icon/Icon";
+import IconType from "../assets/icon/IconType";
+import { fillerText01 } from '../util/fillerText';
+import "./Dashboard.css";
+// import { v4 as uuidv4 } from 'uuid';
+// import TopBar from "./topbar/TopBar";
+// import MainContent from "./MainContent";
+// import ViewType from '../types/ViewType';
 // import Tab from 'react-bootstrap/Tab';
 
 const Dashboard = (
@@ -15,36 +23,68 @@ const Dashboard = (
         content: JSX.Element[],
     }
 ) => {
+    const tabs = ['Home', 'Composition Graph', 'Resource Network', 'Mission Graph', 'Mapping']
     return (
         <div
+            className="flex-grid"
             style={{
-                padding: '0px',
+                // textAlign: 'center',
                 backgroundColor: 'black',
-                border: '1px solid orange',
             }}
         >
             <div
-                className="topbar-container"
+                className="col sidebar-col"
                 style={{
-                    border: '2px solid pink',
+                    border: '1px solid red',
+                    width: '25%',
+                    display: 'inline-block'
                 }}
             >
+                <div
+                    className="topbar-left-side"
+                    style={{
+                        border: '3px solid purple',
+                        width: '100%',
+                        display: 'inline-block'
+                    }}
+                >
+                    <div
+                        className="logo-container"
+                        style={{
+                            position: 'relative',
+                            paddingLeft: '1rem',
+                            left: '0px',
+                            width: '50%',
+                            display: 'inline',
+                            textAlign: 'left',
+                        }}
+                    >
+                        <HeaderLogotype />
+                    </div>
+                    <div
+                    
+                        style={{
+                            width: '10%',
+                            display: 'inline',
+                            paddingTop: '0.5rem',
+                            float: 'right',
+                        }}
+                    >
+                        <NavLink
+                            to="/home"
+                            style={{
+                                paddingBottom: '0.5rem',
+                                backgroundColor: 'transparent',
+                                borderColor: 'rgb(24,24,24)',
+                                display: 'inline',
 
-                <TopBar
-                    tabs={[
-                        <Tab tabLink={ViewType.COMPOSITION} title={'Composition graph'} key={uuidv4()}></Tab>,
-                        <Tab tabLink={ViewType.MISSION} title={'Mission Event graph'} key={uuidv4()}></Tab>,
-                        <Tab tabLink={ViewType.RESOURCE_NETWORK} title={'Resource Network'} key={uuidv4()}></Tab>,
-                        <Tab tabLink={ViewType.MAPPING} title={'Mapping'} key={uuidv4()}></Tab>,
-                        <Tab tabLink={ViewType.DYREQT_RUN} title={'Dyreqt'} key={uuidv4()}></Tab>,
-                    ]}
-                />
-            </div>
-            <div
-                style={{
-                    border: '1px solid red'
-                }}
-            >
+                            }}
+                        >
+                            <Icon iconType={IconType.HOME} size={20} />
+                        </NavLink>
+                    </div>
+
+                </div>
                 <SidebarMenu
                     panels={[
                         <SearchPanel />,
@@ -52,12 +92,43 @@ const Dashboard = (
                         <SettingsButton />,
                     ]}
                 />
-                <MainContent
-                    content={props.content}
-                    setCurrentView={props.setCurrentView}
-                />
+            </div>
+            <div
+                className="col main-col"
+                style={{
+                    width: '75%',
+                    display: 'inline-block',
+                    verticalAlign: 'top',
+                }}
+            >
+                <Tabs
+                    defaultActiveKey="home"
+                    transition={false}
+                    id="noanim-tab-example"
+                    className="mb-3"
+                    style={{
+                        height: '100%',
+                        color: 'white',
+                        border: '1px solid black',
+                        backgroundColor: 'gray',
+                    }}
+                >
+                    {tabs.map((tab:string) => (
+                        <Tab
+                            eventKey={tab}
+                            title={tab}
+                            style={{
+                                color: 'white',
+                                padding: '1rem',
+                                border: '1px solid gray',
+                            }}
+                        >
+                            {fillerText01}
+                        </Tab>
+                    ))}
+                </Tabs>
             </div>
         </div>
-    );
+    )
 }
 export default Dashboard;

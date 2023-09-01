@@ -3,8 +3,20 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: black;
 }
-
+html {
+  background-color: black;
+}
+.flex-grid {
+  display: flex;
+}
+.col {
+  flex: 1;
+}
+/* .nav-item {
+  border: '10px solid red';
+} */
 .logo {
   height: 6em;
   padding: 1.5em;
