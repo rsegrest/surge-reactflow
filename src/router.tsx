@@ -3,7 +3,7 @@ import {
 } from 'react-router-dom';
 
 import Dashboard from './components/Dashboard';
-import QuickStartPanel from './components/subpanels/quickstart/QuickstartPanel';
+import QuickStartPanel from './components/subpanels/quickstart/_QuickStartPanel';
 import RecentPanel from './components/subpanels/recent/RecentPanel';
 // import ViewType from './types/ViewType';
 import SettingsPanel from './components/subpanels/settings/SettingsPanel';

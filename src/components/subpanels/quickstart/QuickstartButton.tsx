@@ -8,7 +8,7 @@ interface QuickStartButtonProps {
     iconType:(IconType|string|null),
 }
 
-const QuickStartButton = (props:QuickStartButtonProps) => {
+export const QuickStartButton = (props:QuickStartButtonProps) => {
     return (
         <Button
             style={{

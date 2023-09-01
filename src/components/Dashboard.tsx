@@ -9,13 +9,10 @@ import SettingsButton from "./button/SettingsButton";
 import HeaderLogotype from "./topbar/HeaderLogotype";
 import Icon from "../assets/icon/Icon";
 import IconType from "../assets/icon/IconType";
-import { fillerText01 } from '../util/fillerText';
+import { getLayout } from "../util/getLayout";
 import "./Dashboard.css";
-// import { v4 as uuidv4 } from 'uuid';
-// import TopBar from "./topbar/TopBar";
-// import MainContent from "./MainContent";
-// import ViewType from '../types/ViewType';
-// import Tab from 'react-bootstrap/Tab';
+import ViewType from '../types/ViewType';
+import MappingView from '../views/MappingView';
 
 const Dashboard = (
     props: {
@@ -23,7 +20,14 @@ const Dashboard = (
         content: JSX.Element[],
     }
 ) => {
-    const tabs = ['Home', 'Composition Graph', 'Resource Network', 'Mission Graph', 'Mapping']
+    const tabs = [
+        ViewType.HOME,
+        ViewType.COMPOSITION,
+        ViewType.RESOURCE_NETWORK,
+        ViewType.MISSION,
+        ViewType.MAPPING,
+        // 'Home', 'Composition Graph', 'Resource Network', 'Mission Graph', 'Mapping'
+    ]
     return (
         <div
             className="flex-grid"
@@ -113,17 +117,22 @@ const Dashboard = (
                         backgroundColor: 'gray',
                     }}
                 >
-                    {tabs.map((tab:string) => (
+                    {tabs.map((tab:ViewType) => (
                         <Tab
-                            eventKey={tab}
-                            title={tab}
+                            eventKey={tab.toString()}
+                            title={tab.toString()}
                             style={{
                                 color: 'white',
                                 padding: '1rem',
                                 border: '1px solid gray',
                             }}
                         >
-                            {fillerText01}
+                            <Dashboard
+                                // setCurrentView={setCurrentView}
+                                content={[
+                                    <MappingView />
+                                ]}
+                            />
                         </Tab>
                     ))}
                 </Tabs>

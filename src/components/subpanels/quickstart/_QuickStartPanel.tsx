@@ -3,7 +3,7 @@ import IconType from "../../../assets/icon/IconType";
 import QuickStartButton from "./QuickstartButton";
 import QuickStartHeader from "./QuickstartHeader";
 
-const QuickStartPanel = () => {
+export const QuickStartPanel = () => {
     return (
         <>
             <QuickStartHeader />
