@@ -1,7 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavLink } from "react-router-dom";
 import SidebarMenu from "./sidebar/SidebarMenu";
 import SearchPanel from "./subpanels/search/SearchPanel";
@@ -10,9 +9,10 @@ import SettingsButton from "./button/SettingsButton";
 import HeaderLogotype from "./topbar/HeaderLogotype";
 import Icon from "../assets/icon/Icon";
 import IconType from "../assets/icon/IconType";
-import "./Dashboard.css";
 import ViewType from '../types/ViewType';
-// import MappingView from '../views/MappingView';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./Dashboard.css";
+import { getLayout } from '../util/getLayout';
 
 const Dashboard = (
     props: {
@@ -26,13 +26,12 @@ const Dashboard = (
         ViewType.RESOURCE_NETWORK,
         ViewType.MISSION,
         ViewType.MAPPING,
-        // 'Home', 'Composition Graph', 'Resource Network', 'Mission Graph', 'Mapping'
     ]
+    
     return (
         <div
             className="flex-grid"
             style={{
-                // textAlign: 'center',
                 backgroundColor: 'black',
             }}
         >
@@ -102,9 +101,10 @@ const Dashboard = (
                     width: '75%',
                     display: 'inline-block',
                     verticalAlign: 'top',
+                    height: '3.5rem',
                 }}
             >
-                {/* <Tabs
+                <Tabs
                     defaultActiveKey="home"
                     transition={false}
                     id="noanim-tab-example"
@@ -115,15 +115,8 @@ const Dashboard = (
                         border: '1px solid black',
                         backgroundColor: 'gray',
                     }}
-                > */}
-                    <div
-                        style={{
-                            color: 'white',
-                        }}
-                    >
-                        {JSON.stringify(tabs)}
-                    </div>
-                    {/* {tabs.map((tab:ViewType) => (
+                >
+                    {tabs.map((tab:ViewType) => (
                         <Tab
                             key={uuidv4()}
                             eventKey={tab.toString()}
@@ -131,18 +124,18 @@ const Dashboard = (
                             style={{
                                 color: 'white',
                                 padding: '1rem',
+                                fontSize: '1.5rem',
                                 border: '1px solid gray',
                             }}
                         >
-                            <Dashboard
-                                // setCurrentView={setCurrentView}
-                                // content={[
-                                //     <MappingView />
-                                // ]}
-                            />
+                            <div
+                                className={`tab-${tab.toString()}`}
+                            >
+                                {getLayout(tab)}
+                            </div>
                         </Tab>
-                    ))} */}
-                {/* </Tabs> */}
+                    ))}
+                </Tabs>
             </div>
         </div>
     )
