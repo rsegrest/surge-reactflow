@@ -8,7 +8,7 @@ const App = () => {
     console.log(currentView)
     return (
         <div>
-            {getLayout(currentView, setCurrentView)}
+            {getLayout(currentView)}
         </div>
     );
 }

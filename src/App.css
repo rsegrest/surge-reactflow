@@ -11,6 +11,13 @@ html {
 .flex-grid {
   display: flex;
 }
+.tab-pane > .container {
+  border: 1px solid #888;
+  height: 100%;
+}
+.tab-pane {
+  border: 1px solid #888;
+}
 .col {
   flex: 1;
 }

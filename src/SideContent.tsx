@@ -14,7 +14,9 @@ export const SideContent = () => {
             className="col sidebar-col"
             style={{
                 width: '25%',
-                display: 'inline-block'
+                display: 'inline-block',
+                height: '100rem',
+                backgroundColor: 'rgb(64,64,64)',
             }}
         >
             <div

@@ -12,6 +12,19 @@ export const MainContentTabs = () => {
         ViewType.MISSION,
         ViewType.MAPPING,
     ]
+    const viewTypeToString = (viewType:ViewType) => {
+        if (viewType === ViewType.RESOURCE_NETWORK) {
+            return "Resource Network";
+        } else if (viewType === ViewType.MISSION) {
+            return "Mission";
+        } else if (viewType === ViewType.COMPOSITION) {
+            return "Composition Graph";
+        } else if (viewType === ViewType.MAPPING) {
+            return "Mapping";
+        } else if (viewType === ViewType.HOME) {
+            return "Home";
+        }
+    }
     return (
                 <div
                     className="col main-col"
@@ -20,6 +33,8 @@ export const MainContentTabs = () => {
                         display: 'inline-block',
                         verticalAlign: 'top',
                         height: '3.5rem',
+                        fontFamily: 'Trebuchet MS',
+                        fontStyle: 'bold',
                     }}
                 >
                     <Tabs
@@ -38,7 +53,7 @@ export const MainContentTabs = () => {
                             <Tab
                                 key={uuidv4()}
                                 eventKey={tab.toString()}
-                                title={tab.toString()}
+                                title={viewTypeToString(tab)}
                                 style={{
                                     color: 'white',
                                     padding: '1rem',

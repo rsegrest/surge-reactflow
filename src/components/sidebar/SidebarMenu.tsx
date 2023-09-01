@@ -8,7 +8,7 @@ export const SidebarMenu = (props:{
             style={{
                 height: '100vh',
                 display: 'inline-block',
-                backgroundColor: 'rgba(255,255,255,0.1)',
+                // backgroundColor: 'rgba(255,255,255,0.1)',
             }}
         >
             {props.panels.map((panel: JSX.Element) => (

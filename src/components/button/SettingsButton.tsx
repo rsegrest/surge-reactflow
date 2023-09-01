@@ -8,9 +8,11 @@ const SettingsButton = (props:{
     return (
         <div
             style={{
-                height: '2rem',
-                backgroundColor: 'black',
+                height: '10rem',
                 paddingLeft: '1.5rem',
+                paddingTop: '1.5rem',
+                // backgroundColor: 'rgb(24,24,24)',
+                // border: '1px solid white',
             }}
             >
             <Link
@@ -21,9 +23,10 @@ const SettingsButton = (props:{
                     top: '0px',
                     left: '0px',
                     color: 'white',
-                    border: '1px solid white',
                     borderRadius: '2rem',
-                    
+                    border: '1px solid gray',
+                    backgroundColor: 'rgb(0,0,0)',
+                    // backgroundColor: 'pink',
                 }}
             >
                 <div

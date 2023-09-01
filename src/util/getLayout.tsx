@@ -1,6 +1,5 @@
 
 import ViewType from "../types/ViewType";
-import Dashboard from "../components/Dashboard";
 import QuickStartPanel from "../components/subpanels/quickstart/_QuickStartPanel";
 import RecentPanel from "../components/subpanels/recent/RecentPanel";
 import SettingsPanel from "../components/subpanels/settings/SettingsPanel";
