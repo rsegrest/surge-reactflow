@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,10 +10,9 @@ import SettingsButton from "./button/SettingsButton";
 import HeaderLogotype from "./topbar/HeaderLogotype";
 import Icon from "../assets/icon/Icon";
 import IconType from "../assets/icon/IconType";
-import { getLayout } from "../util/getLayout";
 import "./Dashboard.css";
 import ViewType from '../types/ViewType';
-import MappingView from '../views/MappingView';
+// import MappingView from '../views/MappingView';
 
 const Dashboard = (
     props: {
@@ -66,7 +66,6 @@ const Dashboard = (
                         <HeaderLogotype />
                     </div>
                     <div
-                    
                         style={{
                             width: '10%',
                             display: 'inline',
@@ -105,7 +104,7 @@ const Dashboard = (
                     verticalAlign: 'top',
                 }}
             >
-                <Tabs
+                {/* <Tabs
                     defaultActiveKey="home"
                     transition={false}
                     id="noanim-tab-example"
@@ -116,9 +115,17 @@ const Dashboard = (
                         border: '1px solid black',
                         backgroundColor: 'gray',
                     }}
-                >
-                    {tabs.map((tab:ViewType) => (
+                > */}
+                    <div
+                        style={{
+                            color: 'white',
+                        }}
+                    >
+                        {JSON.stringify(tabs)}
+                    </div>
+                    {/* {tabs.map((tab:ViewType) => (
                         <Tab
+                            key={uuidv4()}
                             eventKey={tab.toString()}
                             title={tab.toString()}
                             style={{
@@ -129,13 +136,13 @@ const Dashboard = (
                         >
                             <Dashboard
                                 // setCurrentView={setCurrentView}
-                                content={[
-                                    <MappingView />
-                                ]}
+                                // content={[
+                                //     <MappingView />
+                                // ]}
                             />
                         </Tab>
-                    ))}
-                </Tabs>
+                    ))} */}
+                {/* </Tabs> */}
             </div>
         </div>
     )
